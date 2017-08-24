@@ -1,5 +1,39 @@
-body {
+html, body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  width: 100%;
+}
+
+body {
+  font-size: 62.5%;
+  transition: 1s background-color;
+}
+
+p {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.2rem;
+}
+
+.container {
+  margin-top: 10%;
+}
+
+.wrapper {
+  background-color: #cccccc;
+  padding: 20px;
+  min-height: 350px;
+  border-radius: 10px;
+  padding-top: 50px;
+}
+
+.wrapper button {
+  position: absolute;
+  bottom: 20px;
+}
+
+.wrapper .social {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
 }
