@@ -4,6 +4,7 @@ import { Social } from './Social';
 import axios from 'axios';
 
 const randomColor = () => '#' + Math.random().toString(16).substr(-6);
+const timer = 5000;
 
 export class Quote extends Component {
     constructor(props) {
@@ -20,10 +21,20 @@ export class Quote extends Component {
     // Get first quote on page load
     componentDidMount() {
         this.getQuote();
+        // Add timer which automatically changes background color and quotes
+        this.timerChangeBackground = setInterval(
+            () =>  {
+                this.changeBackgroundColor();
+                this.getQuote()
+            },
+            timer
+        );
     }
 
+    // Set backgroundColor state
     randomizeColor = () => this.setState({ backgroundColor: randomColor()});
 
+    // Change background color
     changeBackgroundColor = () => {
         // Generate new color
         this.randomizeColor();
