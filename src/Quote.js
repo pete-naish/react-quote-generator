@@ -13,7 +13,7 @@ export class Quote extends Component {
             quote: '',
             author: '',
             cat: '',
-            backgroundColor: ''
+            backgroundColor: randomColor()
         };
     }
     
@@ -23,6 +23,13 @@ export class Quote extends Component {
     }
 
     randomizeColor = () => this.setState({ backgroundColor: randomColor()});
+
+    changeBackgroundColor = () => {
+        // Generate new color
+        this.randomizeColor();
+        // Set the body bg
+        document.body.style.backgroundColor = this.state.backgroundColor;
+    }
 
     // Get quote json
     getQuote = () => {
@@ -38,11 +45,8 @@ export class Quote extends Component {
             // Display errors if have
             console.log(error);
         });
-        
-        // Generate new color
-        this.randomizeColor();
-        // Set the body bg
-        document.body.style.backgroundColor = this.state.backgroundColor;
+
+        this.changeBackgroundColor();
     }
 
     render() {
