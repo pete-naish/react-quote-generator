@@ -51,7 +51,7 @@ export class Quote extends Component {
                 <div className="row justify-content-md-center">
                     <div className="col-md-6 wrapper">
                         <p className="text-justify">{this.state.quote}</p>
-                        <p className="font-weight-bold text-right">By: {this.state.author}</p>
+                        <p className="font-weight-bold text-right">By: {this.state.author}!!!</p>
                         <Button onClick={this.getQuote.bind(this)} />
                         <Social />
                     </div>
