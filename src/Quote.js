@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { QuoteText } from './QuoteText';
 import { Button } from './Button';
 import { Social } from './Social';
 import axios from 'axios';
@@ -13,7 +14,6 @@ export class Quote extends Component {
         this.state = {
             quote: '',
             author: '',
-            cat: '',
             backgroundColor: randomColor()
         };
     }
@@ -48,15 +48,15 @@ export class Quote extends Component {
         .then(response => {
             this.setState({
                 quote: response.data.quote,
-                author: response.data.author,
-                cat: response.data.cat
+                author: response.data.author
             })
         })
         .catch(function(error) {
             // Display errors if have
             console.log(error);
         });
-
+        
+        // Change background when getting quote
         this.changeBackgroundColor();
     }
 
@@ -65,8 +65,10 @@ export class Quote extends Component {
             <div className="container">
                 <div className="row justify-content-md-center">
                     <div className="col-md-6 wrapper">
-                        <p className="text-justify">{this.state.quote}</p>
-                        <p className="font-weight-bold text-right">By: {this.state.author}</p>
+                        <QuoteText 
+                            quote={this.state.quote}
+                            author={this.state.author}
+                        />
                         <Button onClick={this.getQuote.bind(this)} />
                         <Social />
                     </div>

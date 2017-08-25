@@ -12,8 +12,7 @@ export class Social extends Component {
                     <Twitter />
                 </a>
                 <a 
-                    target="_blank"
-                    href="">
+                    href="./index.html">
                     <Facebook />
                 </a>
             </div>
