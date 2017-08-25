@@ -7,5 +7,7 @@ import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render(
     <Quote />,
-    document.getElementById('root'));
+    document.getElementById('root')
+);
+
 registerServiceWorker();

@@ -1,14 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-export class Button extends Component {
-    render() {
-        return (
-            <button 
-                type="button"
-                className="btn btn-info"
-                onClick={this.props.onClick}>
-                Get my quote
-            </button>
-        );
-    }
-}
+export const Button = ({ onClick }) => (
+  <button
+    type="button"
+    className="btn btn-info"
+    onClick={onClick}
+  >
+    Get my quote
+  </button>
+);
